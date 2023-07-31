@@ -11,6 +11,20 @@
         <div class="content">
             <h1>Background change</h1>
         </div>
+         <h2>Get JSON Data from a PHP Server</h2>
+         <p id="demo"></p>
+
     </div>
+   
+<script>
+const xmlhttp = new XMLHttpRequest();
+
+xmlhttp.onload = function() {
+  const myObj = JSON.parse(this.responseText);
+  document.getElementById("demo").innerHTML = myObj.name;
+}
+xmlhttp.open("GET", "demo_file.php");
+xmlhttp.send();
+</script>
 </body>
 </html>
